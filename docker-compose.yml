@@ -1,8 +1,12 @@
+# a very aggressive watchtower config, useful when deploying in a headless environment
+
 services:
   watchtower:
     image: docker.io/nickfedor/watchtower:latest
     container_name: watchtower
     restart: always
-    command: --cleanup
+    command: --cleanup --include-restarting --include-stopped --revive-stopped --label-enable
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      # - /root/.docker/config.json:/config.json # enable only if you need it
+
