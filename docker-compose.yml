@@ -1,0 +1,8 @@
+services:
+  watchtower:
+    image: docker.io/nickfedor/watchtower:latest
+    container_name: watchtower
+    restart: always
+    command: --cleanup
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
