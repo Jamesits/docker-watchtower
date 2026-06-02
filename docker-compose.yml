@@ -5,7 +5,7 @@ services:
     image: docker.io/nickfedor/watchtower:latest
     container_name: watchtower
     restart: always
-    command: --cleanup --include-restarting --include-stopped --revive-stopped --label-enable
+    command: --cleanup --include-restarting --include-stopped --revive-stopped
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       # - /root/.docker/config.json:/config.json # enable only if you need it
